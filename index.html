@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL WORLD EARN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        
+            background-size: cover;
+            color: #fff;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .boxes-container {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 15px;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            height: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .box-content {
+            flex: 1;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            background: #f9f9f9;
+        }
+
+        .box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+
+        /* Adsterra Social Bar Ads Styles */
+        #adsterra-social-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            padding: 5px 0;
+            text-align: center;
+        }
+
+        #adsterra-social-bar iframe {
+            border: none;
+            margin: 0 auto;
+            display: block;
+        }
+        @media (max-width: 1400px) {
+            .boxes-container {
+                grid-template-columns: repeat(10, 1fr);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .boxes-container {
+                grid-template-columns: repeat(10, 1fr);
+            gap: 1px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        }
+
+        @media (max-width: 768px) {
+            .boxes-container {
+                grid-template-columns:10,  1fr;
+                gap: 1px;
+                padding: 5px;
+            }
+            
+            .box {
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="boxes-container" id="boxesContainer">
+            
+        </div>
+    </div>
+
+  </div>
+    <script>
+        // Configuration for 50 website boxes
+        const boxConfig = [
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+           { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+ 
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+  { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' },
+ 
+            { url: 'https://www.effectivegatecpm.com/qjjw5aghg?key=cdddcba29f3d2e0576ab40ae9eeaed21' }
+        ];
+
+        // Function to create a box element
+        function createBox(config, index) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.id = `box-${index}`;
+            
+            const boxContent = document.createElement('div');
+            boxContent.className = 'box-content';
+            
+            // Add loading indicator
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'loading';
+            loadingDiv.textContent = 'Loading...';
+            boxContent.appendChild(loadingDiv);
+            
+            box.appendChild(boxContent);
+            return box;
+        }
+
+        // Function to load content into a box
+        function loadBoxContent(boxElement, config, index) {
+            const boxContent = boxElement.querySelector('.box-content');
+            
+            // Clear loading indicator
+            boxContent.innerHTML = '';
+            
+            // Create iframe for website with enhanced error handling
+            const iframe = document.createElement('iframe');
+            iframe.src = config.url;
+            iframe.loading = 'lazy';
+            iframe.referrerPolicy = 'no-referrer';
+            iframe.sandbox = 'allow-scripts allow-same-origin allow-forms allow-popups allow-presentation';
+            iframe.allow = 'fullscreen';
+            
+            // Success handler
+            iframe.onload = () => {
+                console.log(`Box ${index} loaded successfully`);
+            };
+            
+            // Error handler
+            iframe.onerror = () => {
+                showErrorWithRetry(boxContent, config, index);
+            };
+            
+            boxContent.appendChild(iframe);
+        }
+
+        // Function to show error message with retry button
+        function showErrorWithRetry(boxContent, config, index) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            
+            const errorText = document.createElement('div');
+            errorText.textContent = 'Content blocked';
+            
+            const retryButton = document.createElement('button');
+            retryButton.className = 'retry-button';
+            retryButton.textContent = 'Retry';
+            retryButton.onclick = () => {
+                const boxElement = document.getElementById(`box-${index}`);
+                const boxContent = boxElement.querySelector('.box-content');
+                boxContent.innerHTML = '<div class="loading">Loading...</div>';
+                setTimeout(() => {
+                    loadBoxContent(boxElement, config, index);
+                }, 1000000);
+            };
+            
+            errorDiv.appendChild(errorText);
+            errorDiv.appendChild(retryButton);
+            boxContent.appendChild(errorDiv);
+        }
+
+        // Function to initialize all boxes
+        function initializeBoxes() {
+            const container = document.getElementById('boxesContainer');
+            
+            // Clear container
+            container.innerHTML = '';
+            
+            // Create and append boxes
+            boxConfig.forEach((config, index) => {
+                const box = createBox(config, index);
+                container.appendChild(box);
+                
+                // Load content with intelligent staggered delay
+                setTimeout(() => {
+                    try {
+                        loadBoxContent(box, config, index);
+                    } catch (error) {
+                        const boxContent = box.querySelector('.box-content');
+                        showErrorWithRetry(boxContent, config, index);
+                    }
+                }, 100 + (index *30));
+            });
+        }
+
+        // Global error handling - prevent any errors from crashing the app
+        window.addEventListener('error', function(e) {
+            return true;
+        });
+
+        // Handle promise rejections
+        window.addEventListener('unhandledrejection', function(e) {
+            e.preventDefault();
+        });
+
+        // Handle security policy violations
+        window.addEventListener('securitypolicyviolation', function(e) {
+            return true;
+        });
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initializeBoxes, 500);
+        });
+
+        // Final check when everything is loaded
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                console.log('All websites loaded successfully');
+            }, 99000);
+        });
+    </script>
+    
+</body>
+</html>
