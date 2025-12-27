@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HAMZA TEAM_CYBER_EAGLE'S_HAMZA INTELLGENCE DATA LOOKUP</title>
+  <meta name="description" content="BLACK  HAMZA SIM Database and CNIC Verification" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <style>
+    /* * SIMPLIFIED: Blue and Orange Theme 
+     * Removed all complex animations and background layers.
+    */
+    :root{
+      --bg: #050C1A; /* Dark Blue Background */
+      --light: #E0E7FF; /* Light Text */
+      --muted: #A0B3D6; /* Muted Text */
+      --primary: #FF8C00; /* Main Orange */
+      --secondary: #0056B3; /* Deep Blue */
+      --ring: 0 0 0 2px rgba(255, 140, 0, .4), 0 0 16px rgba(255, 140, 0, .2);
+      --glass: rgba(255,255,255,.04);
+      --stroke: rgba(255,255,255,.1);
+      --shadow: 0 4px 12px rgba(0,0,0,.3);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+      background:var(--bg);
+      color:var(--light);
+      overflow-x:hidden
+    }
+    a{color:inherit; text-decoration: none;}
+
+    /* Removed all complex background setup, keeping only a basic color */
+    .bg-wrap { display: none; } 
+
+    /* ===== LAYOUT & HEADERS ===== */
+    .container{max-width:800px;margin:0 auto;padding:28px 18px 80px}
+    header{text-align:center;margin:30px 0 20px}
+    .brand-title{
+      font-family: 'Poppins', sans-serif; 
+      font-weight: 700; 
+      font-size: clamp(32px, 8vw, 50px); 
+      color: var(--primary);
+    }
+    .subtitle {
+      margin-top:5px; 
+      font-weight:500; 
+      letter-spacing:3px; 
+      text-transform:uppercase; 
+      font-size:.8rem; 
+      color:var(--muted);
+    }
+    .verified{
+      margin:18px auto 25px;max-width:600px;display:flex;gap:12px;align-items:center;justify-content:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--stroke); border-radius:12px; padding:10px 15px; box-shadow:var(--shadow)
+    }
+    .verified i{font-size: 1.2rem; color: var(--primary);}
+    .owner{color:var(--light); font-size:.9rem; font-weight: 600;}
+
+    /* ===== CARD / BOX STYLING (Simplified) ===== */
+    .card{
+      position:relative;border-radius:12px;padding:25px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--stroke); box-shadow: var(--shadow);
+      display: flex; flex-direction: column;
+    }
+    .card h2{
+      font-family:'Poppins',sans-serif; font-size:1.2rem; letter-spacing:1px; text-transform:uppercase; text-align:center; color:var(--primary);
+      margin-bottom: 15px;
+    }
+    .card .hr{width:50px;height:2px;margin:0 auto 20px;background:var(--secondary); filter:drop-shadow(0 0 5px rgba(0, 86, 179, 0.45))}
+
+    /* ===== FORM & INPUTS ===== */
+    .form{display:grid; gap:15px; margin-top:0}
+    
+    .search-type { display: flex; gap: 25px; justify-content: center; margin-bottom: 10px; }
+    .search-type label { display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--muted); font-size: 0.95rem; }
+    .search-type input[type="radio"] { 
+        appearance: none; -webkit-appearance: none; width: 18px; height: 18px; 
+        border: 2px solid var(--muted); border-radius: 50%; position: relative; cursor: pointer; transition: all .2s; 
+    }
+    .search-type input[type="radio"]:checked { border-color: var(--primary); }
+    .search-type input[type="radio"]:checked::after { 
+        content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); 
+        width: 10px; height: 10px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 6px var(--primary); 
+    }
+
+    .input-wrap{position:relative}
+    .input-wrap i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--primary); font-size: 1.1rem;}
+    input#searchInput{
+      width:100%;padding:15px 15px 15px 40px;border-radius:8px;border:1px solid rgba(0, 86, 179, 0.5);
+      background:rgba(255,255,255,.05);color:var(--light);font-size:1rem;letter-spacing:.5px;outline:none;
+      transition:.25s;font-family:'Poppins',sans-serif;text-align:left;
+    }
+    input#searchInput:focus{box-shadow:var(--ring);border-color:var(--primary)}
+    .input-guidance{font-size: .8rem; text-align: center; color: var(--muted); margin-top: 8px; opacity: 0.8;}
+    .btn{
+      border:none;border-radius:8px;cursor:pointer;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px;width:100%;
+      background:linear-gradient(90deg,var(--secondary),var(--primary));
+      color:#fff; 
+      box-shadow:0 8px 20px rgba(255,140,0,.3);
+      transition:transform .1s ease, box-shadow .2s ease
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow: 0 10px 25px rgba(255,140,0,.4)}
+
+    /* ===== SOCIAL ICONS (Simplified) ===== */
+    .social-icons {display: flex; justify-content: center; gap: 14px; margin-top: 20px;}
+    .social-icon {width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--light); transition: all 0.2s ease; background: var(--glass); border: 1px solid var(--stroke);}
+    .social-icon:hover { background: var(--primary); color: var(--bg); }
+
+    /* ===== RESULT (Simplified) ===== */
+    #result{margin-top:20px;border-radius:10px;border:1px solid rgba(0, 86, 179, 0.4);background:rgba(255,255,255,.03);display:none}
+    #result.show{display:block}
+    .result-header{padding: 12px 15px; border-bottom:1px solid var(--primary); margin: 0; font-family:'Poppins',sans-serif; font-size:1rem; color: var(--light); font-weight: 600; display: flex; justify-content: space-between; align-items: center;}
+    .result-count{background: var(--primary); color:var(--bg); padding: 2px 8px; font-size: .75rem; border-radius: 15px; font-weight: 700;}
+    
+    .result-grid {
+        display: grid;
+        grid-template-columns: 1fr; 
+        gap: 15px;
+        padding: 15px;
+    }
+    .result-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:15px;box-shadow:inset 0 0 0 1px rgba(0, 86, 179, 0.1)}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.1);font-family:'Poppins',sans-serif}
+    .row:last-child{border-bottom:none}
+    .label{font-weight:600;color:var(--primary);font-size:.9rem}
+    .value{color:var(--light);font-size:.9rem;word-break:break-word;text-align:right}
+    .msg{padding:20px;text-align:center;font-family:'Poppins',sans-serif}
+    .msg.loading{color:var(--primary)}
+    .msg.error{color:#FFC300}
+
+    /* ===== AD MODAL STYLES (Restored) ===== */
+    .modal{position:fixed;inset:0;display:none;opacity:0;align-items:center;justify-content:center;z-index:1000;background:rgba(5,10,16,.92);backdrop-filter:blur(8px);transition:opacity .3s}
+    .modal-content{background:rgba(10,18,26,.85);border:1px solid var(--primary);box-shadow:0 0 30px rgba(255,140,0,.45);border-radius:14px;width:92%;max-width:900px;height:78vh;padding:18px;display:flex;flex-direction:column;transform:scale(.92);transition:transform .3s}
+    .modal.show{display:flex; opacity: 1;}
+    .modal.show .modal-content{transform:scale(1)}
+
+    @media (min-width: 700px) {
+        .result-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+    }
+  </style>
+</head>
+<body>
+  
+  
+
+  <div class="container">
+    <header>
+      <div class="brand-title"> HAMZA TEAM CYBER EAGLE'S INTELLIGENCE DATA LOOKUP</div>
+      <div class="subtitle">FREE SEARCH / PREMIUM SERVICES/ HAMZA PAK SIM DATA LEAKED CHECK</div>
+    </header>
+
+    <div class="verified">
+      <i class="fa-solid fa-circle-check"></i>
+      <div class="owner"> HACKER HAMZA PAKISTAN DATA BASE</div>
+    </div>
+
+    <div class="main-grid">
+      <section class="card" id="searchCard" style="grid-column: 1 / -1;">
+        <h2>HAMZA HACKER Search Record</h2>
+        <div class="hr"></div>
+        <form id="form" class="form" autocomplete="off">
+          
+          <div class="search-type">
+            <label>
+              <input type="radio" name="search_type" value="phone" checked>
+              Phone
+            </label>
+            <label>
+              <input type="radio" name="search_type" value="cnic">
+              CNIC
+            </label>
+          </div>
+
+          <div class="input-wrap">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <input id="searchInput" inputmode="tel" placeholder=" HAMZA Enter number without +92 (e.g. 03001234567)" maxlength="11" />
+          </div>
+          <p class="input-guidance">Enter valid Pakistani number e.g. 03001234567</p>
+          <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        </form>
+        <div class="social-icons">
+          <a href="https://whatsapp.com/channel/0029VbCHRyQId7nT0BYVKr1P"target="_blank" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://youtube.com/@shafiqjutt112" target="_blank" class="social-icon" aria-label="Youtube"><i class="fab fa-Youtube"></i></a>
+          <a href="https://wa.me/message/DUUAAAGNH3RAB1" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        
+        <div id="result"></div>
+        
+        <p id="footerCredit" style="text-align:center; color:var(--muted); font-size: 0.9rem; margin-top: 15px;"></p>
+        
+      </section>
+    </div>
+  </div>
+
+  <a href="https://whatsapp.com/channel/0029VbCHRyQId7nT0BYVKr1P" target="_blank" class="floating-wa" aria-label="Our WhatsApp group">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms of Service</a>
+    </div>
+    <p>© 2025 HACKER HAMZA TEAM_CYBER_EAGLE'S_ HAMZA INTELLGENCE DATA LOOKUP | ALL RIGHTS RESERVED
+    DEPLOYED BY HAMZA DARK EMPIRE</p>
+  </footer>
+
+  <script>
+    // ===== AD MODAL LOGIC (Restored) =====
+    (function Ads(){
+      const modal=document.getElementById('adModal'),countdown=document.getElementById('countdown'); let timer;
+      function open(){
+        modal.classList.add('show'); 
+        let t=10; countdown.textContent=t; 
+        clearInterval(timer); 
+        timer=setInterval(()=>{
+          t--; 
+          countdown.textContent=t; 
+          if(t<=0)close()
+        },1000)
+      }
+      function close(){
+        clearInterval(timer); 
+        modal.classList.remove('show');
+      }
+      window.__openAd=open; 
+      window.__closeAd=close; 
+      window.addEventListener('keydown',e=>{if(e.key==='Escape')close()})
+    })();
+
+    // ===== DATA FETCH + UX LOGIC =====
+    (function Data(){
+      // Get references to all the HTML elements
+      const form = document.getElementById('form');
+      const resultDiv = document.getElementById('result');
+      const searchInput = document.getElementById('searchInput');
+      const searchTypeRadios = document.querySelectorAll('input[name="search_type"]');
+      const guidanceText = document.querySelector('.input-guidance');
+      const footer= document.getElementById('footerCredit');
+
+      // Configuration
+      const PROXY_URL = 'https://solo.f-a-k.workers.dev/'; 
+      const API_BASE_URL = 'https://fam-official.serv00.net/api/database.php';
+      
+      // Function to update the placeholder text and validation
+      function updateInputUI(type) {
+        const icon = document.querySelector('.input-wrap i');
+        if (type === 'phone') {
+          searchInput.placeholder = 'HAMZA Enter number without +92 (e.g. 03198711376)';
+          searchInput.maxLength = 11;
+          searchInput.inputMode = 'tel';
+          icon.className = 'fa-solid fa-mobile-screen';
+          guidanceText.textContent = 'Enter valid Pakistani number e.g. 03198711376';
+        } else { // cnic
+          searchInput.placeholder = ' HAMZA Enter CNIC without dashes (e.g. 35*0*1*3***78)';
+          searchInput.maxLength = 13;
+          searchInput.inputMode = 'numeric';
+          icon.className = 'fa-solid fa-id-card';
+          guidanceText.textContent = 'HAMZA Enter a valid 13-digit CNIC without dashes.';
+        }
+        searchInput.value = '';
+      }
+
+      // Initial UI update
+      updateInputUI('phone');
+
+      // Attach the event listener to the radio buttons
+      searchTypeRadios.forEach(radio => {
+        radio.addEventListener('change', (event) => {
+          updateInputUI(event.target.value);
+        });
+      });
+
+      // Function to show content in the #result div
+      function show(html){ 
+        resultDiv.innerHTML = html;
+        resultDiv.classList.add('show');
+      }
+
+      // Function to make the labels look nice
+      function formatKey(key) {
+        return key.split('_')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+      }
+
+      // Function to show an error message
+      function showError(message) {
+        show(`<div class=" HAMZA msg error"><i class="fas fa-exclamation-triangle" style="font-size:1.4em;margin-bottom:8px"></i><p>${message}</p></div>`);
+      }
+
+      // Function to show the "Contact for Premium" message
+      function showPremiumContact(num) {
+        const whatsappNumber = '923198711376';
+        const message = `ASALAMUALILUM HAMZA  I NEED PREMIUM DATA OF THIS ID/NUMBER: ${num}`;
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        const html = `
+          <div class=" HAMZA msg error" style="padding: 25px;">
+              <i class="fas fa-exclamation-triangle" style="font-size:1.6em; margin-bottom:12px;"></i>
+              <p style="font-size: 1.1rem; color: var(--light);">Data Not Available</p>
+              <p style="color: var(--muted); font-size: 0.95rem; margin-top: 8px; max-width: 400px; margin-left: auto; margin-right: auto;">
+                  This data is available in the premium service. Please contact the hamza.
+              </p>
+              <a href="${whatsappUrl}" target="_blank" class="social-icon" aria-label="Contact with hamza  on WhatsApp" style="margin-top: 20px; width: 50px; height: 50px; font-size: 1.6rem; background: var(--primary);">
+                  <i class="fab fa-whatsapp"></i>
+              </a>
+          </div>`;
+        show(html);
+      }
+
+      // Main fetch function
+      async function fetchData(query) {
+        show(`<div class=" HANZA msg loading"><i class="fas fa-circle-notch fa-spin"></i><p> HAMZA ACCESSING DATABASE...</p></div>`);
+        footerCredit.innerText = '';
+
+        try {
+          const targetApiUrl = `${API_BASE_URL}?number=${query}`;
+          const finalUrlToFetch = `${PROXY_URL}?url=${encodeURIComponent(targetApiUrl)}`;
+
+          const response = await fetch(finalUrlToFetch);
+
+          if (!response.ok) {
+              throw new Error(`Server responded with status: ${response.status}`);
+          }
+
+          const result = await response.json();
+
+          if (result.success && result.data && result.data.length > 0) {
+              displayResults(result.data);
+              
+              footerCredit.innerText = `Credit:HAMZA DARK TEAM WORLD`;
+          } else {
+              showPremiumContact(query);
+          }
+
+        } catch (error) {
+          console.error("Fetch error:", error);
+          showError(`An error occurred: ${error.message}. HAMZA Please try again.`);
+        }
+      }
+
+      // Function to display results
+      function displayResults(records) {
+        let boxesHtml = '';
+        records.forEach(record => {
+          boxesHtml += `<div class="result-box">`;
+          const keys_order = ['name', 'number', 'cnic', 'address'];
+          keys_order.forEach(key => {
+            if (record[key]) {
+                const value = record[key] || 'N/A';
+                boxesHtml += `
+                  <div class="row">
+                    <span class="label">${formatKey(key)}:</span>
+                    <span class="value">${value}</span>
+                  </div>
+                `;
+            }
+          });
+          boxesHtml += `</div>`;
+        });
+        
+        let html = `
+            <div class="result-header">== 1            ? 'Record' : 'Records'}</span>
+            </div>
+            <div class="result-grid">
+              ${boxesHtml}
+            </div>`;
+        show(html);
+      }
+      
+      // Form submission logic
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const query = searchInput.value.trim();
+        const selectedType = document.querySelector('input[name="search_type"]:checked').value;
+        
+        // Basic validation
+        if (selectedType === 'phone' && !/^\d{11}$/.test(query)) {
+          showError(" HAMZA Please enter a valid 11-digit Pakistani number (e.g., 03198711376)");
+          return;
+        } else if (selectedType === 'cnic' && !/^\d{13}$/.test(query)) {
+          showError(" HAMZA Please enter a valid 13-digit CNIC without dashes (e.g., 35*******8)");
+          return;
+        }
+
+        fetchData(query);
+        
+        // RESTORED: Open ad modal after search
+        if(window.__openAd) window.__openAd();
+      });
+    })();
+  </script>
+<
+</html>
